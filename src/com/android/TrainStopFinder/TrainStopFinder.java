@@ -50,7 +50,7 @@ public class TrainStopFinder extends MapActivity implements LocationListener {
 		}
 	}
 
-	public static String reqURLPrefix = "http://192.168.1.101/TrainStopFinder/marker.php?";
+	private String reqURLPrefix = "";
 	Document dom;
 	List<Markers> myMarks = new ArrayList<Markers>();
 	String rdata = "";
@@ -63,6 +63,8 @@ public class TrainStopFinder extends MapActivity implements LocationListener {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		//reqURLPrefix = getResourceByName(this.getPackageName(), "reqURLPrefix");
+		reqURLPrefix = getString(R.string.reqURLPrefix);
 		lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		map = (MapView) findViewById(R.map.MapView);
 		mc = map.getController();
@@ -83,6 +85,10 @@ public class TrainStopFinder extends MapActivity implements LocationListener {
 		mc.setZoom(17);
 		map.invalidate();
 		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 10, this);
+	}
+
+	public String getResourceByName(String pkgName, String resName) {
+		return getString(getResources().getIdentifier(resName, "string", pkgName));
 	}
 
 	public boolean onKeyDown(int keyCode, KeyEvent event) {

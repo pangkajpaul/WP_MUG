@@ -76,7 +76,7 @@ public class TrainStopFinder extends MapActivity implements LocationListener {
 		Drawable drawable = this.getResources().getDrawable(R.drawable.train);
 		itemizedoverlay = new ItemizedMarkers(drawable, this);
 		//Location l = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-		String cordinates[] = { "56182349", "15600929" };
+		String cordinates[] = { "56182337", "15590565" };
 		int lat = Integer.parseInt(cordinates[0]);
 		int lng = Integer.parseInt(cordinates[1]);
 		GeoPoint point = new GeoPoint(lat,lng);

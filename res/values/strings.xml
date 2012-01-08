@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Train Stop Finder</string>
+    <string name="apiKey">0CaE235q9WQlH2Ymzf47Pus-Pa9l-lr1J1r20hQ</string>
+    <string name="reqURLPrefix">http://192.168.1.101/TrainStopFinder/marker.php?</string>
+
+</resources>
